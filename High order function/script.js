@@ -7,37 +7,38 @@
  * example - setTimeout , setInterval etc
  */
 
-// function sum(a,b){
-//     return a+b;
+// const add =(a,b)=>{
+//    return a+b;
 // }
-
-// function diff(a,b){
+// const minus =(a,b)=>{
 //     return a-b;
 // }
 
-// function calcu(fx , a ,b){
-//     return fx(a,b);
+// const cal = (fx ,a ,b)=>{
+//     return fx(a,b); ///add(5 ,10)
 // }
+// // cal is a HOF
+// const calculationData = cal(add , 5 , 10)
+// const subtraction = cal(minus , 10 ,5)
+// console.log(calculationData);
+// console.log(subtraction);
 
-// const output = calcu(sum , 10 , 20);
-// console.log("output" , output);
+/// data function is HOF
+const data = function (count) {
+  if ((count == 1)) {
+    return function (name) {
+      console.log(
+        `hi our channel name is
+                 ${name}`
+      );
+    };
+  } else {
+    return function () {
+      console.log("hi my age is 26");
+    };
+  }
+};
+const output = data();
+output()
 
-
-
-//////Second method
-// const details = function (con) {
-//   if (con == 1) {
-//     return function (name) {
-//       return `Hi ${name} you are adult`;
-//     };
-//   } else {
-//     return function (age) {
-//       return `My age is 26`;
-//     };
-//   }
-// };
-
-// const actionFun = details()
-// const finalout = actionFun("satyam");
-// console.log(finalout);
 
