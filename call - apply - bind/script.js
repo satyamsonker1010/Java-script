@@ -19,33 +19,37 @@ It allows you to set the context (this) for a function
 and "bind" that function to a specific object,
 */
 
-const calulateMethod = function(){
-    return `Hi my name is ${this.name}. My age is ${this.age}.`
-}
+const meth = function ( city,country) {
+  console.log(`hi my name is ${this.name} and age is ${this.age} and city is ${city} , country ${country}`);
+};
 
-const calulateData = function(){
-    return  `hello how r u ${this.name}`
-}
+let obj = {
+  name: "Hello",
+  age: 26,
+};
 
-const student1 = {
-    name:"code",
-    age:26,
-}
+ //meth.call(obj , "Delhi", "India")
+//meth.apply(obj , ["kanpur","india"])
 
+const mymethod = meth.bind(obj , "lucknow", "india") ///function
+mymethod()
 
-const student2 ={
-    name:"Tech",
-    age:29,
-}
+console.log(obj);
 
 
-const student3 ={
-    name:"Jai",
-    age:24,
-    
-}
 
-const student4 ={
-    name:"Suraj",
-    age:25,
-}
+// let obj2 = {
+//   name: "code",
+//   age: 35,
+//   calculation: meth,
+// };
+
+// obj2.calculation();
+// console.log(obj2)
+
+// let obj3 = {
+//   name: "Tech",
+//   age: 50,
+//   calculation: meth,
+// };
+// obj3.calculation();
